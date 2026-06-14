@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Art. Hachalu Hundessa Memorial | Gimbi Special Secondary School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg: #f5efe8;
+            --surface: #ffffff;
+            --text: #2e241f;
+            --text-light: #4b3b2c;
+            --primary: #2d5a3b;
+            --primary-dark: #1e3c2f;
+            --accent: #b48c5c;
+            --accent-gold: #f3c26b;
+            --border: #e7d7c0;
+            --hero-gradient: linear-gradient(135deg, #1e3c2f 0%, #2a4b34 40%, #5c402b 100%);
+            --card-shadow: 0 15px 30px rgba(88, 60, 30, 0.08);
+            --transition: 0.3s ease;
+        }
+
+        .dark-mode {
+    --bg: #1a1a1a;
+    --surface: #2a2a2a;
+    --text: #e0d6c8;
+    --text-light: #c4b8a5;
+    --primary: #3d7a4f;
+    --primary-dark: #0f1f16;
+    --accent: #c9a06b;
+    --accent-gold: #f3c26b;
+    --border: #444;
+    --hero-gradient: linear-gradient(135deg, #0f1f16 0%, #1a2e20 40%, #2e1a10 100%);
+    --card-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.dark-mode body,
+.dark-mode .inner-container,
+.dark-mode .card,
+.dark-mode .accordion,
+.dark-mode .accordion-body,
+.dark-mode .album-card,
+.dark-mode .highlight-box,
+.dark-mode .contact-details,
+.dark-mode .gallery-item .gallery-caption,
+.dark-mode .contact-strip span,
+.dark-mode .countdown-banner,
+.dark-mode .pomodoro,
+.dark-mode .school-photo-text,
+.dark-mode .legacy-panel,
+.dark-mode .legacy-quote blockquote,
+.dark-mode .download-link { background: #1e1e1e !important; color: #e0d6c8 !important; }
+.dark-mode .accordion-header { background: #2a2a2a !important; color: #e0d6c8 !important; }
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select { background: #2a2a2a !important; color: #e0d6c8 !important; border-color: #555 !important; }
+.dark-mode .btn { background: #333 !important; color: #e0d6c8 !important; border-color: #555 !important; }
+.dark-mode .btn:hover { background: #3d7a4f !important; color: #fff !important; }
+.dark-mode table th { background: #2a2a2a !important; }
+.dark-mode table td { border-color: #444 !important; background: #1e1e1e !important; color: #e0d6c8 !important; }
+.dark-mode .calendar-table .holiday { background: #3d3520 !important; }
+.dark-mode footer { background: #0a0a0a !important; }
+.dark-mode .top-bar { background: #0a0a0a !important; }
+.dark-mode .navbar { background: #111 !important; }
+.dark-mode .sidebar { background: #0a0a0a !important; }
+.dark-mode .hero { background: linear-gradient(135deg, #0f1f16 0%, #1a2e20 40%, #2e1a10 100%) !important; }
+.dark-mode .school-photo { border-color: #444 !important; }
+.dark-mode .card-icon { background: #3d7a4f !important; }
+.dark-mode h1, .dark-mode h2, .dark-mode h3 { color: #f0e6d2 !important; }
+.dark-mode p, .dark-mode li { color: #c4b8a5 !important; }
+.dark-mode hr { background: linear-gradient(to right, #c9a06b, #444) !important; }
+.dark-mode .music-link { background: #cc0000 !important; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        /* ========== HEADER / TOP BAR ========== */
+        .top-bar {
+            background: var(--primary-dark);
+            color: #f7f3e0;
+            padding: 0.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .top-bar .motto {
+            font-style: italic;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+        .top-bar .dark-toggle {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #f7f3e0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .top-bar .dark-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            background: var(--primary);
+            padding: 0.7rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #f7f3e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            transition: background var(--transition);
+        }
+        .navbar .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .navbar .school-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: 800;
+            font-size: 1.2rem;
+            border: 3px solid white;
+            flex-shrink: 0;
+        }
+        .school-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    flex-shrink: 0;
+}
+        .navbar .logo-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.2;
+        }
+        .navbar .logo-text small {
+            display: block;
+            font-weight: 400;
+            font-size: 0.7rem;
+            color: #e7d7b8;
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: #f7f3e0;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.3rem;
+            z-index: 101;
+        }
+
+        /* Desktop nav */
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .nav-links .nav-group {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+        }
+        .nav-links .nav-divider {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0 0.3rem;
+            opacity: 0.7;
+        }
+        .nav-links a {
+            color: #ede3d0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        /* Mobile Sidebar */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 200;
+        }
+        .sidebar-overlay.open {
+            display: block;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100%;
+            background: var(--primary-dark);
+            z-index: 201;
+            transition: right 0.3s ease;
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .sidebar.open {
+            right: 0;
+        }
+        .sidebar .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: #f7f3e0;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        .sidebar .sidebar-group-title {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+        .sidebar a {
+            color: #ede3d0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            display: block;
+            cursor: pointer;
+            transition: 0.2s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: var(--accent-gold);
+        }
+
+        /* ========== PAGES ========== */
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .page.active-page {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: var(--hero-gradient);
+            color: #f7f3e0;
+            padding: 2.5rem 1.5rem 3rem;
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        .hero-text {
+            flex: 2;
+            min-width: 280px;
+        }
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #e7d7b8;
+            margin-bottom: 0.5rem;
+            border-left: 5px solid #d9a066;
+            padding-left: 1rem;
+        }
+        .hero .artist-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 0.25rem 0 0.5rem;
+        }
+        .hero p {
+            font-size: 1rem;
+            max-width: 600px;
+            color: #ede3d0;
+        }
+        .hero-badge {
+            flex: 1;
+            text-align: center;
+            background: rgba(255, 255, 240, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 1.5rem 1rem;
+            border: 1px solid rgba(255, 215, 140, 0.3);
+            min-width: 160px;
+        }
+        .hero-badge i {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+        .hero-badge span {
+            display: block;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #fff3dc;
+        }
+
+        /* ========== CARDS ========== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px rgba(74, 55, 30, 0.2);
+            border-color: var(--accent);
+        }
+        .card-icon {
+            background: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.6rem;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 650;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .btn {
+            margin-top: auto;
+            background: #f6f1e7;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #2b4f2b;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+            border: 1px solid var(--accent);
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ========== INNER PAGES ========== */
+        .inner-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: all var(--transition);
+        }
+        .inner-container h1 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+        .inner-container h1 i {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+        .inner-container hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), var(--border));
+            margin: 0.8rem 0 1.5rem;
+            border-radius: 2px;
+        }
+        .inner-container h2 {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.3rem;
+        }
+        .inner-container h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-top: 1.3rem;
+            margin-bottom: 0.4rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.7rem;
+        }
+        .inner-container p,
+        .inner-container li {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+        .inner-container ul,
+        .inner-container ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-box {
+            background: #fef9f2;
+            border-left: 5px solid var(--accent);
+            padding: 1rem;
+            margin: 1.2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #3d4a2c;
+        }
+        .album-card {
+            background: #f9f4eb;
+            border-radius: 14px;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            border: 1px solid var(--border);
+        }
+        .timeline-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        .music-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #ff0000;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 0.3rem 0.4rem 0.3rem 0;
+            transition: 0.2s;
+        }
+        .music-link:hover {
+            background: #cc0000;
+            transform: scale(1.03);
+        }
+
+        /* ========== SCHOOL PHOTO ========== */
+        .school-photo {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 1rem 0;
+    border: 3px solid var(--border);
+    display: block;
+}
+.school-photo-text {
+    width: 100%;
+    min-height: 250px;
+    border-radius: 20px;
+    margin: 1rem 0;
+    border: 3px solid var(--border);
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+        /* ========== ACHIEVEMENT TABLE ========== */
+        .achievement-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .achievement-table th {
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem;
+            text-align: left;
+        }
+        .achievement-table td {
+            padding: 0.6rem 0.7rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .achievement-table tr:hover td {
+            background: #fdf8f0;
+        }
+
+        /* ========== GALLERY ========== */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .gallery-item {
+            background: var(--primary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            transition: var(--transition);
+        }
+        .gallery-item:hover {
+            border-color: var(--accent-gold);
+            transform: scale(1.02);
+        }
+        .gallery-item .gallery-img {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #2d5a3b, #3d7a4f);
+        }
+        .gallery-item .gallery-caption {
+            padding: 0.7rem;
+            font-size: 0.85rem;
+            color: var(--text);
+            background: var(--surface);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ========== POMODORO ========== */
+        .pomodoro {
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        .pomodoro .timer-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+        .pomodoro button {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 0.4rem;
+            transition: var(--transition);
+        }
+        .pomodoro button:hover {
+            background: var(--accent-gold);
+            transform: scale(1.05);
+        }
+
+        /* ========== ACCORDION ========== */
+        .accordion {
+            background: #f9f4eb;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 0.9rem 1.2rem;
+            font-weight: 650;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        .accordion-header:hover {
+            background: #efe4d2;
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            background: #fffdf9;
+            padding: 0 1.2rem;
+        }
+        .accordion-body.open {
+            max-height: 500px;
+            padding: 0.9rem 1.2rem;
+        }
+
+        /* ========== CALENDAR ========== */
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .calendar-table th {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem;
+            font-size: 0.9rem;
+        }
+        .calendar-table td {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            vertical-align: top;
+        }
+        .calendar-table .holiday {
+            background: #fff3cd;
+            font-weight: 600;
+        }
+
+         /* ========== DOWNLOAD LINKS ========== */
+        .download-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f6f1e7;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .download-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-details {
+            background: #fef9f2;
+            border-radius: 14px;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        label {
+            font-weight: 600;
+        }
+        input,
+        textarea {
+            padding: 0.7rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--bg);
+            color: var(--text);
+        }
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(45, 90, 59, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button[type="submit"] {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            align-self: flex-start;
+        }
+        button[type="submit"]:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--primary-dark);
+            color: #ddd2bc;
+            padding: 2rem 1.5rem;
+            margin-top: 2.5rem;
+            border-radius: 24px 24px 0 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .social-icons a {
+            color: #e7cfaa;
+            margin: 0 0.6rem;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+        .social-icons a:hover {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+            }
+            .inner-container {
+                padding: 1.2rem;
+                margin: 1rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== TOP BAR ========== -->
+    <div class="top-bar">
+        <span class="motto">🌟 "Educating with Purpose — Continuing Hachalu's Vision"</span>
+        <button class="dark-toggle" id="darkToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+    </div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="hace.png" alt="School Logo" class="school-logo-img">
+            <div class="logo-text">
+                Art. Hachalu Hundessa Memorial<br><small>Gimbi Special Secondary School</small>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="desktopNav">
+            <div class="nav-group">
+                <span class="nav-divider">🏫 SCHOOL</span>
+                <a data-page="home" class="active">Home</a>
+                <a data-page="about">About</a>
+                <a data-page="achievements">Achievements</a>
+                <a data-page="calendar">Calendar</a>
+                <a data-page="gallery">Gallery</a>
+                <a data-page="guide">Student Guide</a>
+                <a data-page="resources">Resources</a>
+                <a data-page="contact">Contact</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-divider">🎤 ART. HACHALU</span>
+                <a data-page="biography">Biography</a>
+                <a data-page="music">Music & Albums</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar"><i class="fas fa-times"></i></button>
+        <div>
+            <div class="sidebar-group-title">🏫 SCHOOL</div>
+            <a data-page="home" class="active">Home</a>
+            <a data-page="about">About School</a>
+            <a data-page="achievements">School Achievements</a>
+            <a data-page="calendar">Academic Calendar</a>
+            <a data-page="gallery">Photo Gallery</a>
+            <a data-page="guide">Student Guide</a>
+            <a data-page="resources">Resources</a>
+            <a data-page="contact">Contact</a>
+        </div>
+        <div>
+            <div class="sidebar-group-title">🎤 ART. HACHALU HUNDESSA</div>
+            <a data-page="biography">Biography</a>
+            <a data-page="music">Music & Albums</a>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: HOME ========== -->
+    <div id="page-home" class="page active-page">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Art. Hachalu Hundessa Memorial</h1>
+                    <div class="subtitle">Gimbi Special Secondary School</div>
+                    <div class="artist-name">🎤 Hachalu Hundessa</div>
+                    <p><i class="fas fa-map-pin"></i> Gimbi, West Wollega, Oromia, Ethiopia · Est. 2013 E.C.</p>
+                    <p style="margin-top:0.5rem; font-style:italic;">"Educating with Purpose — Continuing Hachalu's Vision"</p>
+                </div>
+                <div class="hero-badge">
+                    <i class="fas fa-dove"></i>
+                    <span>"Maalan Jira"</span>
+                    <small style="color:#e7cfaa;">Voice of the Oromo People</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="info-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-school"></i></div>
+                    <h3>About School</h3>
+                    <p>Est. 2013 E.C. — 144 students trained in building technology. Producing competent manpower for Ethiopia.</p>
+                    <span class="btn" data-page="about">Learn more <i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Achievements</h3>
+                    <p>School awards, student success stories, and institutional recognitions since establishment.</p>
+                    <span class="btn" data-page="achievements">View <i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Academic Calendar</h3>
+                    <p>Key dates: enrollment, exams, holidays, and graduation schedule for the academic year.</p>
+                    <span class="btn" data-page="calendar">Calendar <i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-images"></i></div>
+                    <h3>Photo Gallery</h3>
+                    <p>School campus, student activities, and Hachalu Hundessa memorial events in pictures.</p>
+                    <span class="btn" data-page="gallery">View photos <i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Student Guide</h3>
+                    <p>45 Q&A on exams, scholarships, study tips + Pomodoro timer for focused learning.</p>
+                    <span class="btn" data-page="guide">Read guide <i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>Art. Hachalu Hundessa</h3>
+                    <p>Biography, music, albums — the life and legacy of the voice of the Oromo people.</p>
+                    <span class="btn" data-page="biography">Explore <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: ABOUT ========== -->
+    <div id="page-about" class="page">
+        <div class="inner-container">
+            <h1><i class="fas fa-landmark"></i> About Our School</h1><hr>
+
+            <img src="ahhmgsss.jpg" alt="Art. Hachalu Hundessa Memorial Gimbi Special Secondary School" class="school-photo">
+            <p style="text-align:center; font-size:0.85rem; color:var(--text-light);"><em>Art. Hachalu Hundessa Memorial Gimbi Special Secondary School — Main Building</em></p>
+
+            <h3>Establishment</h3>
+            <p>Art. Hachalu Hundessa Memorial Gimbi Special Secondary School was established in <strong>2013 E.C.</strong> in Oromia Regional State, West Wollega Zone, Gimbi Town. The school has provided teaching to <strong>144 students</strong> from its establishment to the present.</p>
+
+            <h3>School Mission</h3>
+            <p>To produce competent, adaptable, innovative manpower that ensures job creation on the basis of outcome-based education by involving stakeholders and the business community, enhancing socio-economic development of Oromia and Ethiopia.</p>
+
+            <h3>Key Activities</h3>
+            <ul><li>Building Technology Array</li><li>Supporting Small Scale Micro Enterprise</li><li>Technology Accumulation and Transfer</li><li>Producing Competent Industry Manpower</li><li>Capacity Building of the School</li></ul>
+
+            <h3>Vision</h3>
+            <p>To become a centre of excellence offering accredited, high-quality, cutting-edge technology training through multi-site campuses.</p>
+
+            <h3>Values</h3>
+            <p>Equality & Equity · Academic Freedom · Corporate Social Responsibility · Trusted Partnership · Participatory Teamwork · Client Satisfaction · Efficiency · Credibility · Competence · Professional Integrity · Self-initiation · Commitment to Excellence</p>
+
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: ACHIEVEMENTS ========== -->
+    <div id="page-achievements" class="page">
+        <div class="inner-container">
+            <h1><i class="fas fa-trophy"></i> School Achievements</h1><hr>
+
+            <h2>🏆 Institutional Awards</h2>
+            <table class="achievement-table">
+                <thead><tr><th>Year</th><th>Achievement</th><th>Awarded By</th></tr></thead>
+                <tbody>
+                    <tr><td>2015 E.C.</td><td>Best Emerging Technical School in West Wollega</td><td>Oromia Education Bureau</td></tr>
+                    <tr><td>2017 E.C.</td><td>Excellence in Building Technology Training</td><td>Regional TVET Agency</td></tr>
+                    <tr><td>2019 E.C.</td><td>Top Performer — Student Enterprise Development</td><td>Ministry of Education</td></tr>
+                    <tr><td>2021 E.C.</td><td>Community Impact Award</td><td>Gimbi Town Administration</td></tr>
+                    <tr><td>2023 E.C.</td><td>Best Memorial School Honoring National Icon</td><td>Oromia Culture Bureau</td></tr>
+                </tbody>
+            </table>
+
+            <h2>🎓 Student Achievements</h2>
+            <table class="achievement-table">
+                <thead><tr><th>Student Name</th><th>Year</th><th>Achievement</th></tr></thead>
+                <tbody>
+                    <tr><td>Tolosa Gudeta</td><td>2022</td><td>1st Place — Regional Building Technology Competition</td></tr>
+                    <tr><td>Bontu Tadesse</td><td>2023</td><td>National TVET Scholarship Recipient</td></tr>
+                    <tr><td>Gammachiis Lemma</td><td>2023</td><td>Entrepreneurship Award — Small Business Launch</td></tr>
+                    <tr><td>Faaya Gutama</td><td>2024</td><td>Top Graduate — Employed by Leading Construction Firm</td></tr>
+                    <tr><td>Milkii Dirribaa</td><td>2024</td><td>Innovation Prize — Sustainable Building Design</td></tr>
+                    <tr><td>Caalaa Bultum</td><td>2025</td><td>Community Leadership Award</td></tr>
+                </tbody>
+            </table>
+
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: ACADEMIC CALENDAR ========== -->
+    <div id="page-calendar" class="page">
+        <div class="inner-container">
+            <h1><i class="fas fa-calendar-alt"></i> Academic Calendar</h1><hr>
+            <p>Key dates for the academic year</p>
+
+            <table class="calendar-table">
+                <thead><tr><th>Month</th><th>Event</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Hagayyaa 23- Qame 5</td><td>New Academic Year  Begins</td><td>Registration & orientation week</td></tr>
+                    <tr class="holiday"><td>Fulbaana 1</td></td><td>Ethiopian New Year(Enkotatash)</td><td>Public holiday</td></tr>
+                    <tr><td>Fulbaana 2</td><td>Rule Telling </td><td>To start class and telling to student about their right and obligation</td></tr>
+                    <tr><td>Fulbaana 5</td><td>Starting The Semister</td><td>The frist class of the frist semerter</td></tr>
+                    <tr class="holiday"><td>Fulbaana 17</td><td>Finding The True Cross(Masqal)</td><td>Public holiday</td></tr>
+                    <tr class="holiday"><td>Mudde 29</td><td>Timket (Epiphany)</td><td>Public holiday</td></tr>
+                    <tr><td>Amajjii </td><td>Final Semester 1 Exams</td><td>All subjects</td></tr>
+                    <tr class=holiday><td>Ammajjii 11</td></td><td>Ethiopian Epiphany (Timket)</td><td>Public holiday</td></tr>
+                    <tr><td>Amajjii 25-29</td></td><td>Rest Week </td><td>Where teacher arrange student's porfolio and file</td></tr>
+                    <tr><td>Guraandhala 2</td><td>Starting Of 2 Semester</td></td><td>Opening day</td></tr>
+                    <tr class="holiday"><td>Ebla 27</td></td><td>Patriots' Victory</td><td>Public holiday</td></tr>
+                    <tr class="holiday"><td>Camsa 19</td></td><td>Eid Al Adha</td><td>Public holiday</td></tr>
+                    <tr><td>Waxabajjii 8</td><td>Final Exams</td><td>End of academic year</td></tr>
+                    <tr><td>Waxabajjii 17-24</td><td>Graduation Ceremony</td><td>Awarding weeks</td></tr>
+                </tbody>
+            </table>
+
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+<!-- ========== PAGE: GALLERY ========== -->
+<div id="page-gallery" class="page">
+    <div class="inner-container">
+        <h1><i class="fas fa-images"></i> Photo Gallery</h1><hr>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="ahhmgsss.jpg" alt="Main School Building" class="gallery-img">
+                <div class="gallery-caption">Main School Building — Gimbi Town</div>
+            </div>
+            <div class="gallery-item">
+                <img src="ques.jpg" alt="Students Questions and Answer event" class="gallery-img">
+                <div class="gallery-caption">Students participating in a Question and Answer Program designed to encourage critical thinking, communication, and active learning. 📚🎤✨</div>
+            </div>
+            <div class="gallery-item">
+                <img src="sport.jpg" alt="Sports Training" class="gallery-img">
+                <div class="gallery-caption">⚽ School Sports Competition
+Students taking part in a school sports competition that promotes teamwork, discipline, sportsmanship, and physical fitness. 🏆</div>
+            </div>
+            <div class="gallery-item">
+                <img src="farm.png" alt="Farm Activity" class="gallery-img">
+                <div class="gallery-caption">A living classroom where students learn, grow, and cultivate the future. 🌱✨</div>
+            </div>
+            <div class="gallery-item">
+                <img src="senior.jpg" alt="Senior Students" class="gallery-img">
+                <div class="gallery-caption">Our Senior Classes of 2016 and 2017 represent an important chapter in the history of our school. Through their dedication, leadership, and commitment to academic excellence, they contributed to the growth of the school community and set a positive example for future generations of students.</div>
+            </div>
+            <div class="gallery-item">
+                <img src="balle.png" alt="Cultural Event" class="gallery-img">
+                <div class="gallery-caption">Our school's Balle Transition ceremony is a meaningful tradition that symbolizes the transfer of responsibility, leadership, and commitment from one group of students to the next. Through this event, students celebrate unity, continuity, and the values that strengthen the school community.</div>
+            </div>
+        </div>
+
+        <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+    </div>
+</div>
+    <!-- ========== PAGE: STUDENT GUIDE ========== -->
+    <div id="page-guide" class="page">
+        <div class="inner-container">
+            <h1><i class="fas fa-graduation-cap"></i> Student Success Guide</h1><hr>
+
+            <div class="pomodoro">
+                <h2 style="color:white; margin-top:0;">⏱️ Pomodoro Study Timer</h2>
+                <div class="timer-display" id="timerDisplay">25:00</div>
+                <div>
+                    <button id="pomodoroStart"><i class="fas fa-play"></i> Start</button>
+                    <button id="pomodoroReset"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+                <p style="color:#ddd; margin-top:0.6rem;">Study 25 min → Break 5 min → Repeat</p>
+            </div>
+
+            <h2>45 Common Student Questions</h2>
+            <p>Click any question to reveal the answer.</p>
+
+            <div class="accordion"><div class="accordion-header">1. How do I create an effective study timetable? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>List all subjects. Allocate more time to difficult topics. Use 45-minute study blocks with 10-minute breaks. Include weekends for revision and update every two weeks.</p></div></div>
+            <div class="accordion"><div class="accordion-header">2. Best way to prepare for national exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Begin 3–4 months early. Collect past papers. Practice under timed conditions. Focus on understanding concepts. Join a study group. Review mistakes carefully.</p></div></div>
+            <div class="accordion"><div class="accordion-header">3. How can I improve my memory for exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Use active recall — test yourself. Create mind maps. Teach material to someone else. Use mnemonics. Get enough sleep — sleep consolidates memory.</p></div></div>
+            <div class="accordion"><div class="accordion-header">4. What should I do the night before an exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Review summary notes lightly. Prepare everything needed. Eat a healthy dinner. Go to bed early. Avoid screens before sleep. Visualize success.</p></div></div>
+            <div class="accordion"><div class="accordion-header">5. How do I manage exam stress? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice deep breathing. Exercise regularly. Break study into small tasks. Talk to friends or a counselor. Avoid comparing yourself. One exam does not define your worth.</p></div></div>
+            <div class="accordion"><div class="accordion-header">6. How can I find scholarship opportunities? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Check government education websites, university portals, NGO announcements. Visit school guidance office. Search online platforms. Follow Ethiopian education pages.</p></div></div>
+            <div class="accordion"><div class="accordion-header">7. What do scholarship committees look for? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Strong academic record, leadership potential, community service, clear career goals, compelling personal story. They want students who will give back to their community.</p></div></div>
+            <div class="accordion"><div class="accordion-header">8. How to write a winning scholarship essay? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Start with a powerful personal story. Explain challenges overcome. Connect goals to community needs. Be specific, honest, passionate. Ask a teacher to review.</p></div></div>
+            <div class="accordion"><div class="accordion-header">9. What documents needed for scholarship? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Academic transcripts, recommendation letters (2–3), personal statement, CV, proof of identity, sometimes proof of financial need. Keep scanned copies ready.</p></div></div>
+            <div class="accordion"><div class="accordion-header">10. How early should I apply for scholarships? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Start 6–12 months before enrollment. Many international deadlines are 8–10 months before the academic year. Apply to multiple opportunities.</p></div></div>
+            <div class="accordion"><div class="accordion-header">11. Best study techniques for science? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Draw diagrams. Solve numerical problems daily. Understand formulas. Conduct simple experiments. Use flashcards. Watch educational videos for complex topics.</p></div></div>
+            <div class="accordion"><div class="accordion-header">12. How to prepare for mathematics exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice every day. Start easy and increase difficulty. Write all steps. Learn from mistakes. Memorize key formulas but understand derivations.</p></div></div>
+            <div class="accordion"><div class="accordion-header">13. How can I improve English skills? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Read English books and newspapers daily. Watch programs with subtitles. Practice speaking with friends. Keep a vocabulary notebook. Write essays and ask for feedback.</p></div></div>
+            <div class="accordion"><div class="accordion-header">14. What is the Pomodoro Technique? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Study 25 minutes, then take a 5-minute break. After four cycles, take a longer break. Use the timer above to practice this proven technique.</p></div></div>
+            <div class="accordion"><div class="accordion-header">15. How do I stay motivated? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Set small daily goals. Reward yourself. Remind yourself of long-term dreams. Study with motivated friends. Change environment occasionally. Track progress.</p></div></div>
+            <div class="accordion"><div class="accordion-header">16. What foods help with studying? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Protein-rich foods, fruits (bananas, berries), nuts, whole grains. Drink plenty of water. Avoid heavy oily meals. Limit sugar and caffeine.</p></div></div>
+            <div class="accordion"><div class="accordion-header">17. How much sleep do I need? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Aim for 7–8 hours every night. Sleep consolidates learning. All-nighters reduce performance. Maintain a consistent sleep schedule.</p></div></div>
+            <div class="accordion"><div class="accordion-header">18. How to handle difficult subjects? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Find a real-world connection. Break into small topics. Ask a classmate to explain differently. Use YouTube tutorials. Reward yourself after each session.</p></div></div>
+            <div class="accordion"><div class="accordion-header">19. Best way to take notes? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Cornell method: divide page into notes, cues, summary. Write key points, not everything. Use abbreviations. Review and rewrite same day.</p></div></div>
+            <div class="accordion"><div class="accordion-header">20. How to prepare for oral presentations? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice out loud. Record yourself. Prepare note cards. Anticipate questions. Arrive early, breathe deeply, speak slowly.</p></div></div>
+            <div class="accordion"><div class="accordion-header">21. How to make group study effective? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Limit to 3–5 focused members. Set clear agenda. Each member teaches one topic. Quiz each other. Avoid distractions. End with summary.</p></div></div>
+            <div class="accordion"><div class="accordion-header">22. What if I fail an exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Feel disappointed, then move forward. Analyze what went wrong. Talk to your teacher. Create a new study plan. Failure is a stepping stone.</p></div></div>
+            <div class="accordion"><div class="accordion-header">23. How to balance school and family? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Create a weekly schedule. Communicate with family. Use early morning hours. Combine activities when possible.</p></div></div>
+            <div class="accordion"><div class="accordion-header">24. Best online resources for Ethiopian students? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Ministry of Education website, Khan Academy, Coursera, YouTube educational channels, Ethiopian student Telegram forums.</p></div></div>
+            <div class="accordion"><div class="accordion-header">25. How to choose the right university program? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Identify interests and strengths. Research job market demand. Talk to professionals. Consider long-term goals. Choose what fits you.</p></div></div>
+            <div class="accordion"><div class="accordion-header">26. What is a growth mindset? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Belief that intelligence can be developed through effort. Embrace challenges, learn from criticism, persist through setbacks.</p></div></div>
+            <div class="accordion"><div class="accordion-header">27. How to avoid procrastination? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Use the 2-minute rule. Break tasks into tiny steps. Remove distractions. Set earlier deadlines. Tell someone your goals for accountability.</p></div></div>
+            <div class="accordion"><div class="accordion-header">28. How to improve handwriting? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice daily 10 minutes. Slow down. Use lined paper. Maintain consistent letter size. Legible handwriting earns extra marks.</p></div></div>
+            <div class="accordion"><div class="accordion-header">29. What is the Feynman Technique? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Explain a concept simply as if teaching a child. Identify gaps. Go back to source. If you can't explain it simply, you don't understand it.</p></div></div>
+            <div class="accordion"><div class="accordion-header">30. Preparing for multiple exams in one week? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Create priority list. Study hardest subject first. Rotate subjects. Use summary sheets. Don't neglect any subject.</p></div></div>
+            <div class="accordion"><div class="accordion-header">31. How can I find a mentor? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Look among teachers, older students, professionals. Approach respectfully with specific questions. Show commitment. Be appreciative.</p></div></div>
+            <div class="accordion"><div class="accordion-header">32. Benefits of extracurricular activities? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Develop leadership, teamwork, time management. Strengthen scholarship applications. Reduce stress. Build friendships. Balance is key.</p></div></div>
+            <div class="accordion"><div class="accordion-header">33. How to set SMART goals? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Specific, Measurable, Achievable, Relevant, Time-bound. Example: "Score above 80% in math by studying 1 hour daily."</p></div></div>
+            <div class="accordion"><div class="accordion-header">34. How can parents support students? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Provide quiet study space. Ensure proper nutrition and sleep. Offer encouragement, not pressure. Celebrate effort. Avoid comparing.</p></div></div>
+            <div class="accordion"><div class="accordion-header">35. What if I don't understand a topic? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Ask teacher immediately. Write down confusion. Ask classmate. Look online. Visit library. Never let confusion accumulate.</p></div></div>
+            <div class="accordion"><div class="accordion-header">36. How to prepare a strong CV? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Include education, awards, volunteer work, skills. One page. Clear headings. Proofread. Ask teacher to review. Update every 6 months.</p></div></div>
+            <div class="accordion"><div class="accordion-header">37. Importance of past exam papers? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Reveal exam format, question types, marking schemes. Help practice time management. Complete at least 5 years of past papers.</p></div></div>
+            <div class="accordion"><div class="accordion-header">38. What should I do after completing each topic to prepare effectively for the entrance exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>After each topic, create as many questions as you can—especially if it’s a key topic for the entrance exam—so you can test your understanding and spot weak spots.</p></div></div>
+            <div class="accordion"><div class="accordion-header">39. Habits of top-performing students? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Consistent routines, ask questions, review regularly, sleep well, exercise, set goals, avoid cramming, seek help. Learning is a daily habit.</p></div></div>
+            <div class="accordion"><div class="accordion-header">40. How to stay focused at home? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Designate study area. Keep it clean. Turn off notifications. Use website blockers. Tell family your schedule. Use instrumental music.</p></div></div>
+            <div class="accordion"><div class="accordion-header">41. What to do during school holidays? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Rest first. Review difficult topics. Read outside curriculum. Learn a new skill. Volunteer. Prepare for upcoming topics. Balance relaxation with productivity.</p></div></div>
+            <div class="accordion"><div class="accordion-header">42. How to handle negative feedback? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Listen without defensiveness. Separate emotions from feedback. Ask for specific suggestions. Thank the teacher. Create an action plan.</p></div></div>
+            <div class="accordion"><div class="accordion-header">43. Best ways to revise before an exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Active recall. Summary mind maps from memory. Teach aloud. Solve past papers. Focus on weak areas. Review, don't re-learn.</p></div></div>
+            <div class="accordion"><div class="accordion-header">44. How can technology help studies? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Educational apps, tutorial videos, online communities, cloud backup. Limit social media — it's the biggest distraction.</p></div></div>
+            <div class="accordion"><div class="accordion-header">45. #1 factor for academic success? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p><strong>Consistency.</strong> Studying a little every day beats cramming. Small efforts compound into massive results. Build daily habits. There is no shortcut.</p></div></div>
+
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: RESOURCES ========== -->
+    <!-- ========== PAGE: RESOURCES ========== -->
+<div id="page-resources" class="page">
+    <div class="inner-container">
+        <h1><i class="fas fa-book-open"></i> Resources & Downloads</h1><hr>
+        <p>Downloadable materials for students.</p>
+
+        <h3>🔗 Useful Links</h3>
+        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/%40marvelenglishtube/videos&ved=2ahUKEwj93NCC4ISVAxWoTKQEHeCHNIcQFnoECC4QAQ&usg=AOvVaw3DNsIe8Xat7Hi9Gs-PtNT7</a> target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> Marvel English Tube</a>
+        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.indiabix.com/&ved=2ahUKEwijquW6zYSVAxVYNfsDHXRILJIQFnoECBMQAQ&usg=AOvVaw24--XAoI6zPjYbOZoUHtsk" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> <b>Indiabix</b></a>
+       <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/channel/UCej2Yf3m5S4zToFp0Lws65w&ved=2ahUKEwjjgI3D54SVAxXG2AIHHQmpFKMQFnoECB8QAQ&usg=AOvVaw2bhvULgx7HiR8gy8X7ok8Z" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> Z Secret Academy</a>
+       <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/%40KelemAcademy-m6g&ved=2ahUKEwj1677-5oSVAxXPKvsDHeKCFtUQFnoECCYQAQ&usg=AOvVaw0NR4tcUMvpJ_VN0IXns_VE" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i>Kelem Academy</a>
+        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/%40MeklitTilahunChernet&ved=2ahUKEwjS9Mm15oSVAxVmUqQEHQDnOSQQFnoECA8QAQ&usg=AOvVaw08hJVcWhP502V-8BN9W7jt" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> Agritube(Agriculture)</a>
+        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://cursa.app/en&ved=2ahUKEwj3_7ym5oSVAxUqzgIHHS9fDvYQFnoECBIQAQ&usg=AOvVaw2L_j0-AGhQjEbdf-QSQoV3" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i>Cursa(free course and certification)</a>
+        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.mometrix.com/&ved=2ahUKEwjbrPKP5oSVAxUrVqQEHYIsEVEQFnoECBEQAQ&sqi=2&usg=AOvVaw2xAgq_OkwXir7hXXJRspAv" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i>Mometrix</a>
+        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://t.me/s/englishlearnerspro%3Fbefore%3D1489&ved=2ahUKEwjr77eZ5ISVAxXkUqQEHZOFMCMQFnoECFIQAQ&sqi=2&usg=AOvVaw1GTdB-5YlIfJR5VJAMQw6c" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> English Grammer daily </a>
+        
+         <h3>📚 Study Materials</h3>
+        <a href="top 50 aptitude test.pdf" class="download-link" download><i class="fas fa-file-alt"></i> Top 50 Aptitude Test</a>
+        <a href="sat.pdf" class="download-link" download><i class="fas fa-file-alt"></i> Scholastic Aptitude Test</a>
+        <a href="scholarship.pdf" class="download-link" download><i class="fas fa-file-alt"></i> Scholarship Application Guide</a>
+
+        <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+    </div>
+</div>
+
+        <!-- ========== PAGE: CONTACT ========== -->
+    <div id="page-contact" class="page">
+        <div class="inner-container">
+            <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+            <div class="contact-details">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Gimbi Town, West Wollega Zone, Oromia, Ethiopia</p>
+                <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +251-9X-XXX-XXXX</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@hhmemorialschool.edu.et</p>
+            </div>
+            <h2>Send us a message</h2>
+            <form action="<form action="https://formspree.io/f/xgobpjag" method="POST">" method="POST">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Full name" required>
+                <label>Your Email</label>
+                <input type="email" name="email" placeholder="Email address" required>
+                <label>Subject</label>
+                <input type="text" name="subject" placeholder="What is this about?">
+                <label>Message</label>
+                <textarea name="message" placeholder="Write your message..." required></textarea>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: BIOGRAPHY ========== -->
+    <div id="page-biography" class="page">
+        <div style="background: linear-gradient(135deg, #1e3c2f 0%, #2a4b34 60%, #3d2b1a 100%); color: #f7f3e0; padding: 2.5rem 2rem; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); margin-bottom: 2rem;">
+            <h1 style="font-size: clamp(1.8rem, 4vw, 2.5rem);"><i class="fas fa-microphone-alt"></i> Art. Hachalu Hundessa</h1>
+            <div style="font-size: 1.3rem; color: #f3c26b; font-weight: 600;">1986 – June 29, 2020</div>
+            <div style="color: #e7d7b8;">Singer · Songwriter · Civil Rights Activist</div>
+        </div>
+        <div class="inner-container">
+            <p><strong>Art. Hachalu Hundessa</strong> was a prominent Ethiopian singer, songwriter, and civil rights activist whose powerful music became the defining soundtrack for the Oromo people's struggle for political freedom and equality.</p>
+            <h2><span class="timeline-dot"></span> 1986–2002: Early Life</h2>
+            <p>Born in <strong>Ambo</strong> in 1986 to Hundessa Bonsa and Gudatu Hora. Named <em>Haacaaluu</em>, fifth of eight children. Spent youth tending cattle and singing.</p>
+            <h2><span class="timeline-dot"></span> 2003–2008: Imprisonment</h2>
+            <p>Arrested at 17 for Oromo self-rule protests. Five years in Karchale Ambo prison — composed nine songs and educated himself.</p>
+            <div class="highlight-box">"Prison makes a man stronger — his father's words that shaped a revolutionary."</div>
+            <h2><span class="timeline-dot"></span> 2009–2014: Rise to Stardom</h2>
+            <p><strong>Sanyii Mootii</strong> (2009) — immediate success. Married Fantanesh Demisse. <strong>Waa'ee Keenya</strong> (2013) — #1 African album on Amazon Music.</p>
+            <h2><span class="timeline-dot"></span> 2015–2018: The Revolution</h2>
+            <p><strong>"Maalan Jiraa?"</strong> (2015) became the Oromo protest anthem, helping force regime change in 2018.</p>
+            <h2><span class="timeline-dot"></span> June 2020: Assassination</h2>
+            <p>Shot June 29, 2020 in Addis Ababa at age 34. Nationwide unrest — 160+ deaths.</p>
+            <h2><span class="timeline-dot"></span> Legacy</h2>
+            <p>Buried at Emmanuel Orthodox Church, Ambo. Shooter received life imprisonment. <strong>Maal Mallisaa</strong> released posthumously (2021).</p>
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE: MUSIC ========== -->
+    <div id="page-music" class="page">
+        <div class="inner-container">
+            <h1><i class="fas fa-music"></i> Music & Albums</h1><hr>
+            <p>Art. Hachalu Hundessa's complete discography with YouTube links.</p>
+
+            <h2>Studio Albums</h2>
+            <div class="album-card"><strong>Sanyii Mootii</strong> — 2009 <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Sanyii+Mootii" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Listen</a></div>
+            <div class="album-card"><strong>Waa'ee Keenya</strong> — 2013 <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Waa'ee+Keenya" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Listen</a></div>
+            <div class="album-card"><strong>Maal Mallisaa</strong> — 2021 <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Maal+Mallisaa" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Listen</a></div>
+
+            <h2>Iconic Singles</h2>
+            <div class="album-card"><strong>Maalan Jiraa?</strong> <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Maalan+Jira" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Watch</a></div>
+            <div class="album-card"><strong>Jirra</strong> <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Jirra" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Watch</a></div>
+            <div class="album-card"><strong>Waaqeffannaa</strong> <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Waaqeffannaa" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Watch</a></div>
+
+            <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</span>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p style="font-weight:600; font-size:1.1rem;">Art. Hachalu Hundessa Memorial Gimbi Special Secondary School</p>
+                <p style="font-size:0.85rem; color:#cbb786;">© 2026 · Oromia, Ethiopia</p>
+                <p style="font-style:italic; color:var(--accent-gold);">"Educating with Purpose — Continuing Hachalu's Vision"</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.8rem; opacity:0.7;">In loving memory of Art. Hachalu Hundessa — "Seenaa kee hin dagatinu"</p>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        (function() {
+            // Page switching
+            const pages = document.querySelectorAll('.page');
+            const allClickable = document.querySelectorAll('[data-page]');
+
+            function showPage(pageName) {
+                pages.forEach(p => p.classList.remove('active-page'));
+                const target = document.getElementById('page-' + pageName);
+                if (target) target.classList.add('active-page');
+                document.querySelectorAll('[data-page]').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageName) link.classList.add('active');
+                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Close sidebar
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('sidebarOverlay').classList.remove('open');
+            }
+
+            allClickable.forEach(el => {
+                el.addEventListener('click', function(e) {
+                    const pageName = this.getAttribute('data-page');
+                    if (pageName) {
+                        e.preventDefault();
+                        showPage(pageName);
+                    }
+                });
+            });
+
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                const validPages = ['home', 'about', 'achievements', 'calendar', 'gallery', 'guide',
+                    'resources', 'contact', 'biography', 'music'
+                ];
+                if (validPages.includes(hash)) showPage(hash);
+            }
+
+            // Dark mode
+            const darkToggle = document.getElementById('darkToggle');
+            const body = document.body;
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                darkToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            }
+            darkToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    darkToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    darkToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                }
+            });
+
+            // Hamburger menu
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const closeSidebar = document.getElementById('closeSidebar');
+
+            hamburgerBtn.addEventListener('click', () => {
+                sidebar.classList.add('open');
+                sidebarOverlay.classList.add('open');
+            });
+            closeSidebar.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.remove('open');
+            });
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.remove('open');
+            });
+
+            // Pomodoro timer
+            let pomodoroInterval,
+                pomodoroTime = 25 * 60,
+                pomodoroRunning = false;
+            const timerDisplay = document.getElementById('timerDisplay');
+
+            function updateTimerDisplay() {
+                const mins = Math.floor(pomodoroTime / 60),
+                    secs = pomodoroTime % 60;
+                timerDisplay.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+            }
+            document.getElementById('pomodoroStart').addEventListener('click', function() {
+                if (pomodoroRunning) {
+                    clearInterval(pomodoroInterval);
+                    pomodoroRunning = false;
+                    this.innerHTML = '<i class="fas fa-play"></i> Start';
+                } else {
+                    pomodoroRunning = true;
+                    this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                    pomodoroInterval = setInterval(() => {
+                        if (pomodoroTime > 0) { pomodoroTime--;
+                            updateTimerDisplay(); } else {
+                            clearInterval(pomodoroInterval);
+                            pomodoroRunning = false;
+                            this.innerHTML = '<i class="fas fa-play"></i> Start';
+                            alert('Time is up! Take a 5-minute break.');
+                            pomodoroTime = 25 * 60;
+                            updateTimerDisplay();
+                        }
+                    }, 1000);
+                }
+            });
+            document.getElementById('pomodoroReset').addEventListener('click', () => {
+                clearInterval(pomodoroInterval);
+                pomodoroRunning = false;
+                pomodoroTime = 25 * 60;
+                updateTimerDisplay();
+                document.getElementById('pomodoroStart').innerHTML = '<i class="fas fa-play"></i> Start';
+            });
+
+            // Accordion
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const body = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    const isOpen = body.classList.contains('open');
+                    document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove(
+                        'open'));
+                    document.querySelectorAll('.accordion-header i').forEach(i => { i.classList
+                            .remove('fa-chevron-up');
+                        i.classList.add('fa-chevron-down'); });
+                    if (!isOpen) { body.classList.add('open');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up'); }
+                });
+            });
+
+            updateTimerDisplay();
+        })();
+    </script>
+</body>
+</html>
